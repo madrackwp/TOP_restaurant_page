@@ -1,6 +1,10 @@
 import "./style.css";
 import logo from "./assets/logo.png";
 
+import generateMenuTab from "./helperFunctions/menu_tab.js";
+import generateAboutTab from "./helperFunctions/about_tab.js";
+import generateContactTab from "./helperFunctions/contact_tab.js";
+
 console.log("I am here!");
 
 const buttons = document.querySelectorAll(".nav_button");
@@ -30,45 +34,6 @@ buttons[2].addEventListener("click", (e) => {
   content_container.innerHTML = "";
   content_container.appendChild(generateContactTab());
 });
-
-function generateMenuTab() {
-  const menu_tab = document.createElement("div");
-  menu_tab.classList.add("main-tab");
-  menu_tab.id = "menu_tab";
-
-  for (let _ = 0; _ < 5; _++) {
-    let childNode = document.createElement("p");
-    childNode.innerHTML = "MENU CONTENT";
-    menu_tab.appendChild(childNode);
-  }
-  return menu_tab;
-}
-
-function generateAboutTab() {
-  const about_tab = document.createElement("div");
-  about_tab.classList.add("main-tab");
-  about_tab.id = "about_tab";
-
-  for (let _ = 0; _ < 5; _++) {
-    let childNode = document.createElement("p");
-    childNode.innerHTML = "ABOUT CONTENT";
-    about_tab.appendChild(childNode);
-  }
-  return about_tab;
-}
-
-function generateContactTab() {
-  const contact_tab = document.createElement("div");
-  contact_tab.classList.add("main-tab");
-  contact_tab.id = "contact_tab";
-
-  for (let _ = 0; _ < 5; _++) {
-    let childNode = document.createElement("p");
-    childNode.innerHTML = "CONTACT CONTENT";
-    contact_tab.appendChild(childNode);
-  }
-  return contact_tab;
-}
 
 const content_container = document.getElementById("content");
 console.log(content_container);
